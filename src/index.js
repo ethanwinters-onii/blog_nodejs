@@ -1,0 +1,37 @@
+const express = require('express')
+var morgan = require('morgan')
+const handlebars = require('express-handlebars')
+var path = require('path');
+
+const app = express()
+const port = 3000
+
+// Static file 
+app.use(express.static(path.join(__dirname, 'public')))
+
+// HTTP Logger
+app.use(morgan('combined'))
+
+// Template engine
+app.engine('hbs', handlebars.engine({
+  extname: '.hbs',
+}));
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'resource/views'));
+
+console.log(path.join(__dirname, 'public'));
+
+
+app.get('/', (req, res) => {
+  // res.send('Hello World!')
+  res.render('home')
+})
+
+app.get('/new', (req, res) => {
+  // res.send('Hello World!')
+  res.render('new')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})

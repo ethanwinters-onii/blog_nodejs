@@ -1,0 +1,11 @@
+@import 'variable'; 
+
+.test {
+    font-size: 24;
+    background-color: $red-color;
+    position: relative;
+}
+
+.second-header {
+    color: $sea-color;
+}

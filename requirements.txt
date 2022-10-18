@@ -1,0 +1,5 @@
+npm i node-sass --save-dev
+npm i express
+npm i express-handlebars
+npm i morgan --save-dev
+npm i nodemon --save-dev
