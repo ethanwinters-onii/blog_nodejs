@@ -13,14 +13,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // HTTP Logger
-app.use(morgan('combined')
-);
+app.use(morgan('combined'));
 
 // Template engine
 app.engine(
     'hbs',
     handlebars.engine({
-extname: '.hbs',
+        extname: '.hbs',
     }),
 );
 app.set('view engine', 'hbs');
@@ -31,5 +30,5 @@ console.log(path.join(__dirname, 'public'));
 router(app);
 
 app.listen(port, () => {
-              console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening on port ${port}`);
 });

@@ -7,11 +7,15 @@
     "start": "nodemon --inspect src/index.js",
     "watch": "node-sass --watch src/resource/scss/ --output src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "beautiful": "lint-staged",
-    "prepare": "husky install"
+    "beautiful": "prettier --single-quote --trailing-comma all --tab-width 4 --write "
   },
   "lint-staged": {
     "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "repository": {
     "type": "git",
@@ -28,7 +32,8 @@
   "homepage": "https://github.com/quyet-seta/blog_nodejs#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^6.0.6"
+    "express-handlebars": "^6.0.6",
+    "package.json": "^2.0.1"
   },
   "devDependencies": {
     "husky": "^8.0.1",
