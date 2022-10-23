@@ -3,3 +3,5 @@ npm i express
 npm i express-handlebars
 npm i morgan --save-dev
 npm i nodemon --save-dev
+
+ext: prettier, lint-staged, husky
